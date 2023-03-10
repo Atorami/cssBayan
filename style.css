@@ -1,0 +1,29 @@
+*{
+    margin: 20px;
+    list-style-type: none;
+}
+img{
+    width: 400px;
+    height: 200px;
+}
+h1{
+    margin: 20px;
+}
+
+.hide{
+    display: none;
+}
+
+.accordion label{
+    display: block;
+    cursor: pointer;
+    background-color: dodgerblue;
+    height: 20px;
+
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.accordion input:checked + label + .acc_info{
+    display: block;
+}
