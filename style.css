@@ -1,17 +1,28 @@
-*{
-    margin: 20px;
-    list-style-type: none;
+body{
+    margin: 5% 20%;
 }
 img{
     width: 400px;
     height: 200px;
+    padding-top: 10px;
 }
 h1{
     margin: 20px;
 }
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+ul li{
+    margin-top: 10px;
+}
 
 .hide{
     display: none;
+}
+
+.accordion{
+    width: 100%;
 }
 
 .accordion label{
@@ -24,6 +35,11 @@ h1{
     font-weight: bold;
 }
 
+.acc_info:hover{
+    cursor: pointer;
+}
+
 .accordion input:checked + label + .acc_info{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
