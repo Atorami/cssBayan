@@ -3,12 +3,6 @@ body{
     transition: all .5s;
 }
 
-img{
-    width: 400px;
-    height: 200px;
-    padding-top: 10px;
-}
-
 h1{
     margin: 20px;
 }
@@ -26,6 +20,13 @@ p{
     margin: 0;
 }
 
+.acc__img{
+    min-width: 40%;
+    padding-top: 10px;
+    transform: scale(0.8);
+    transition: 0.5s ease-in-out;
+}
+
 .hide{
     display: none;
 }
@@ -39,7 +40,6 @@ p{
     transition: all .5s;
 }
 .cross:hover{
-    transform: rotate(45deg);
     filter: invert(100%);
     transition: all .5s;
 }
@@ -49,6 +49,9 @@ p{
 }
 .accordion:hover .cross{
     opacity: 1;
+}
+.accordion:hover label{
+    color: aliceblue;
 }
 
 .accordion label{
@@ -63,10 +66,6 @@ p{
     transition: all .5s ease-in;
 }
 
-.accordion label:hover{
-    color: aliceblue;
-}
-
 .acc_info{
     justify-content: center;
 }
@@ -77,19 +76,34 @@ p{
 
 .accordion input:checked + label + .acc_info{
     display: flex;
-    transition: all .5s ease-in;
+    transition: all 5s ease-in;
 }
-.accordion input:checked ~ .cross{
+.accordion input:checked .cross{
     opacity: 1;
     transform: rotate(45deg);
     filter: invert(100%);
     transition: all .5s;
 }
 
-.accordion li:hover .acc_info{
+.accordion input:checked ~ label > .cross{
+    transform: rotate(45deg);
+    filter: invert(100%);
+}
+.accordion input:checked ~ .acc_info > img{
+    transform: scale(1);
+}
+
+.accordion li:hover .acc_info {
     display: flex;
+}
+
+.accordion li:hover ~ .acc_info > img{
+    transform: scale(1);
     transition: all .5s;
 }
+
+
+
 
 
 
@@ -101,13 +115,34 @@ p{
 
 
 @media only screen and (max-width: 320px){
-   
-  }
-  
+    body{
+        margin: 5%;
+    }
+    img{
+        max-width: 60%;
+        height: 100px;
+    }
+    .accordion label{
+        height: 40px;
+    }
+}
  
-@media only screen and (min-width: 821px) {
-
+@media only screen and (max-width: 821px) {
+    img{
+        max-width: 50%;
+        height: 200px;
+    }
+    .accordion label{
+        height: 40px;
+    }
+    .cross{
+        padding-left: 10px;
+    }
 }
 
-@media only screen and (min-width: 1921px) {
+@media only screen and (min-width: 19px) {
+    img{
+        max-width: 400px;
+        height: 200px;
+    }
 }
