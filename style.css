@@ -35,11 +35,43 @@ ul li{
     font-weight: bold;
 }
 
+.accordion label:hover{
+    color: aliceblue;
+}
+
+.acc_info{
+    justify-content: center;
+}
+
 .acc_info:hover{
     cursor: pointer;
 }
 
 .accordion input:checked + label + .acc_info{
     display: flex;
-    justify-content: center;
+}
+
+.accordion li:hover .acc_info{
+    display: flex;
+}
+
+
+
+
+
+
+
+/*Media queries*/
+
+
+@media only screen and (max-width: 320px){
+   
+  }
+  
+ 
+@media only screen and (min-width: 821px) {
+
+}
+
+@media only screen and (min-width: 1921px) {
 }
