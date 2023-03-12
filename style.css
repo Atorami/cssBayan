@@ -1,11 +1,14 @@
 body{
     margin: 5% 20%;
+    transition: all .5s;
 }
+
 img{
     width: 400px;
     height: 200px;
     padding-top: 10px;
 }
+
 h1{
     margin: 20px;
 }
@@ -13,26 +16,51 @@ ul{
     list-style-type: none;
     padding: 0;
 }
+
 ul li{
     margin-top: 10px;
+}
+
+p{
+    padding: 0;
+    margin: 0;
 }
 
 .hide{
     display: none;
 }
 
+.cross{
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    transition: all .5s;
+}
+.cross:hover{
+    transform: rotate(45deg);
+    filter: invert(100%);
+    transition: all .5s;
+}
+
 .accordion{
     width: 100%;
 }
+.accordion:hover .cross{
+    opacity: 1;
+}
 
 .accordion label{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     cursor: pointer;
     background-color: dodgerblue;
     height: 20px;
 
     padding: 10px 20px;
     font-weight: bold;
+    transition: all .5s ease-in;
 }
 
 .accordion label:hover{
@@ -49,10 +77,18 @@ ul li{
 
 .accordion input:checked + label + .acc_info{
     display: flex;
+    transition: all .5s ease-in;
+}
+.accordion input:checked ~ .cross{
+    opacity: 1;
+    transform: rotate(45deg);
+    filter: invert(100%);
+    transition: all .5s;
 }
 
 .accordion li:hover .acc_info{
     display: flex;
+    transition: all .5s;
 }
 
 
