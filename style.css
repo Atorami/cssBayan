@@ -1,0 +1,144 @@
+body{
+    margin: 5% 20%;
+    transition: all .5s;
+    font-size: 16px;
+}
+
+h1{
+    margin: 20px;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li{
+    margin-top: 10px;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+.acc__img{
+    min-width: 40%;
+    padding-top: 10px;
+    transform: scale(0.8);
+    transition: 0.5s ease-in-out;
+}
+
+.hide{
+    display: none;
+}
+
+.cross{
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    transition: all .5s;
+}
+.cross:hover{
+    filter: invert(100%);
+    transition: all .5s;
+}
+
+.accordion{
+    width: 100%;
+}
+.accordion:hover .cross{
+    opacity: 1;
+}
+.accordion:hover label{
+    color: aliceblue;
+}
+
+.accordion label{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: dodgerblue;
+    height: 20px;
+
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all .5s ease-in;
+}
+
+.acc_info{
+    justify-content: center;
+}
+
+.acc_info:hover{
+    cursor: pointer;
+}
+
+.accordion input:checked + label + .acc_info{
+    display: flex;
+    transition: all 5s ease-in;
+}
+.accordion input:checked .cross{
+    opacity: 1;
+    transform: rotate(45deg);
+    filter: invert(100%);
+    transition: all .5s;
+}
+
+.accordion input:checked ~ label > .cross{
+    transform: rotate(45deg);
+    filter: invert(100%);
+}
+.accordion input:checked ~ .acc_info > img{
+    transform: scale(1);
+}
+
+.accordion li:hover .acc_info {
+    display: flex;
+}
+
+.accordion li:hover ~ .acc_info > img{
+    transform: scale(1);
+    transition: all .5s;
+}
+
+/*Media queries*/
+
+
+@media only screen and (max-width: 320px){
+    body{
+        margin: 5%;
+        font-size: 12px;
+    }
+    img{
+        max-width: 60%;
+        height: 100px;
+    }
+    .accordion label{
+        height: 40px;
+    }
+}
+ 
+@media only screen and (max-width: 821px) {
+    body{
+        font-size: 14px;
+    }
+    img{
+        max-width: 50%;
+        height: 200px;
+    }
+    .accordion label{
+        height: 40px;
+    }
+    .cross{
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    img{
+        max-width: 400px;
+        height: 200px;
+    }
+}
